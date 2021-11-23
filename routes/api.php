@@ -15,8 +15,13 @@ use Illuminate\Http\Request;
 
 Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
     Route::group(['as' => 'api.v1.'], function () {
-        Route::group(['prefix' => 'users'], function () {
-            Route::get('/', 'UserController@index');
+        Route::group(['prefix' => 'products',],
+            function () {
+                Route::get('/', 'ProductController@index');
+                Route::post('/store-product', 'ProductController@store');
         });
+        
     });
 });
+
+?>
