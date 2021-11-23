@@ -45,4 +45,22 @@ class ProductService extends AbstractService implements ProductServiceInterface
         return $this->productRepository->store($userRequest);
     }
 
+    public function update($request, $id)
+    {
+        // $validated = $request->validate([
+        //     'id' => 'required',
+        //     'name' => 'required',
+        //     'description' => 'required',
+        //     'status' => 'required'
+        // ]);
+
+        // if(!$validated){
+        //     throw new InvalidArgumentException($validated->errors()->fisrt());
+        // }
+
+        $product = $request->toArray();
+
+        return $this->productRepository->find($id)->update($product);
+    }
+
 }

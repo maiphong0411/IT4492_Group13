@@ -19,8 +19,8 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
             function () {
                 Route::get('/', 'ProductController@index');
                 Route::post('/store-product', 'ProductController@store');
+                Route::put('/{id}', 'ProductController@update');
         });
-        
     });
 });
 

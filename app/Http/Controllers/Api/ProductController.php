@@ -37,5 +37,21 @@ class ProductController extends ApiController
         }
     }
 
+    public function update(Request $request, $id)
+    {
+        try {
+            $this->productService->update($request, $id);
+            return response()->json([
+                'data'=> ['code' => 200, 'message' => 'Update successfully !']
+            ],200
+            );
+        }catch (\Exception $error){
+            return response()->json([
+                    'data'=>['code' => 500, 'message' => $error->getMessage()]
+                ]
+            );
+        }
+    }
+
     
 }
