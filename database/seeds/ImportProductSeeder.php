@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SoldProductTableSeeder extends Seeder
+class ImportProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,10 +11,11 @@ class SoldProductTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('soldproducts')->insert([
-            'id' => 1,
+        DB::table('importproducts')->insert([
             'product_id' => 1,
-            'quantity' => 12,
+            'quantity' => 30,
+            'price' => 200000,
+            'description' => 'No',
         ]);
     }
 }
