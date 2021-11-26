@@ -15,10 +15,10 @@ class CreateExportproductsTable extends Migration
     {
         Schema::create('exportproducts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('product_id');
-            $table->integer('customer_id');
-            $table->integer('quantity');
-            $table->integer('price');
+            $table->unsignedInteger('product_id');
+            $table->unsignedInteger('customer_id');
+            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('price');
             $table->string('description');
             $table->timestamps();
         });

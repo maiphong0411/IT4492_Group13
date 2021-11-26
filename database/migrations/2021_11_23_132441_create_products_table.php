@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('size', 2);
-            $table->integer('quantity');
+            $table->unsignedInteger('quantity');
             $table->string('source',2);
-            $table->integer('warehouse_id');
-            $table->integer('price');
+            $table->unsignedInteger('warehouse_id');
+            $table->unsignedInteger('price');
             $table->timestamps();
         });
     }
