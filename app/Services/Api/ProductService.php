@@ -47,16 +47,20 @@ class ProductService extends AbstractService implements ProductServiceInterface
 
     public function update($request, $id)
     {
-        // $validated = $request->validate([
-        //     'id' => 'required',
-        //     'name' => 'required',
-        //     'description' => 'required',
-        //     'status' => 'required'
-        // ]);
+        $validated = $request->validate([
+            'id' => 'required',
+            'name' => 'required',
+            'size' => 'required',
+            'quantity' => 'required',
+            'source' => 'required',
+            'warehouse_id' => 'required',
+            'price' => 'required'
+        ]);
 
-        // if(!$validated){
-        //     throw new InvalidArgumentException($validated->errors()->fisrt());
-        // }
+        if(!$validated)
+        {
+            throw new InvalidArgumentException($validated->errors()->fisrt());
+        }
 
         $product = $request->toArray();
 

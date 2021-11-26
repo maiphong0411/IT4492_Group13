@@ -16,11 +16,13 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
         parent::__construct($product);
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         return Product::all();
     }
 
-    public function store($userRequest){
+    public function store($userRequest)
+    {
         $newRequest = new Product;
         $newRequest->id = $userRequest['id'];
         $newRequest->name = $userRequest['name'];

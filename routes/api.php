@@ -21,6 +21,12 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
                 Route::post('/store-product', 'ProductController@store');
                 Route::put('/{id}', 'ProductController@update');
         });
+        Route::group(['prefix' => 'return_products',],
+            function () {
+                Route::get('/', 'ReturnProductController@index');
+                Route::post('/store-returnproduct', 'ReturnProductController@store');
+                Route::put('/return-product/{id}', 'ReturnProductController@update');
+        });
     });
 });
 
