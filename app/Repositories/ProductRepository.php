@@ -22,6 +22,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
 
     public function store($userRequest){
         $newRequest = new Product;
+        $newRequest->id = $userRequest['id'];
         $newRequest->name = $userRequest['name'];
         $newRequest->size = $userRequest['size'];
         $newRequest->quantity = $userRequest['quantity'];
