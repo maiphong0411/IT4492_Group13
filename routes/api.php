@@ -27,6 +27,12 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
                 Route::post('/store-returnproduct', 'ReturnProductController@store');
                 Route::put('/return-product/{id}', 'ReturnProductController@update');
         });
+        Route::group(['prefix' => 'export_products',],
+            function () {
+                Route::get('/', 'ExportProductController@index');
+                Route::post('/store-exportproduct', 'ExportProductController@store');
+                Route::put('/{id}', 'ExportProductController@update');
+        });
     });
 });
 

@@ -3,15 +3,15 @@
 
 namespace App\Services\Api;
 
-
-use App\Contracts\Services\Api\ProductServiceInterface;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use App\Repositories\ProductRepository;
 use App\Services\AbstractService;
 use http\Env\Request;
 use http\Exception\InvalidArgumentException;
 
 
-class ProductService extends AbstractService implements ProductServiceInterface
+class ProductService extends AbstractService 
 {
     protected $productRepository;
 
