@@ -29,8 +29,21 @@ class ReturnProductRepository extends BaseRepository
         $newRequest->quantity = $userRequest['quantity'];
         $newRequest->description = $userRequest['description'];
         $newRequest->price = $userRequest['price'];
+        $newRequest->from = $userRequest['from'];
+        $newRequest->to = $userRequest['to'];
+        $newRequest->state = $userRequest['state'];
         $newRequest->save();
         return true;
     }
 
+    public function destroy($id)
+    {
+        if (ReturnProduct::where('id', '=', $id)->exists()) {
+            $this->destroyMulti($id);
+            return true;
+        }
+        else 
+            return false;
+         
+    }
 }

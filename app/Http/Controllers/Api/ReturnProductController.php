@@ -15,6 +15,7 @@ class ReturnProductController extends ApiController
     {
        $this->returnProductService = $returnProductService;
     }
+
     public function index()
     {
         return response()->json(['data'=>['data'=>$this->returnProductService->getAll()]]);
@@ -53,5 +54,19 @@ class ReturnProductController extends ApiController
         }
     }
 
-    
+    public function destroy(Request $request, $id)
+    {
+        try {
+            $this->returnProductService->destroy($id);
+            return response()->json([
+                'data'=> ['code' => 200, 'message' => 'Delete successfully !']
+            ],200
+            );
+        }catch (\Exception $error){
+            return response()->json([
+                    'data'=>['code' => 500, 'message' => $error->getMessage()]
+                ]
+            );
+        }
+    }
 }

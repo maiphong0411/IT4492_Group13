@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "8089:80"
+      - "8091:80"
       - "443:443"
     volumes:
       - .:/var/www
@@ -37,8 +37,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=IT4492
-      - MYSQL_USER=maiphong
-      - MYSQL_PASSWORD=maiphong
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
     networks:
       - app-network
 

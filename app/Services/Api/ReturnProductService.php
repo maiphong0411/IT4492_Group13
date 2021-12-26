@@ -31,6 +31,8 @@ class ReturnProductService extends AbstractService
             'quantity' => 'required',
             'description' => 'required',
             'price' => 'required',
+            'from' => 'required',
+            'to' => 'required',
         ]);
 
         if(!$validated){
@@ -49,7 +51,9 @@ class ReturnProductService extends AbstractService
             'customer_id' => 'required',
             'quantity' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'from' => 'required',
+            'to' => 'required'
         ]);
 
         if(!$validated)
@@ -62,4 +66,8 @@ class ReturnProductService extends AbstractService
         return $this->returnProductRepository->find($id)->update($returnProduct);
     }
 
+    public function destroy($id)
+    {
+        return $this->returnProductRepository->destroy($id);
+    }
 }

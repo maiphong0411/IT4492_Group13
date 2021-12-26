@@ -8,7 +8,7 @@ use App\Models\ExportProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class ExportProductRepository extends BaseRepository 
+class ExportProductRepository extends BaseRepository
 {
     public function __construct(ExportProduct $exportProduct)
     {
@@ -32,8 +32,7 @@ class ExportProductRepository extends BaseRepository
 
         $theProduct = DB::table('products')->where('id', $newRequest->product_id)->first();
         $realQuantity = $theProduct->quantity - $userRequest['quantity'];
-    DB::table('products')->where('id', $newRequest->product_id)->update(["quantity" => $realQuantity]);
+        DB::table('products')->where('id', $newRequest->product_id)->update(["quantity" => $realQuantity]);
         return true;
     }
-
 }
