@@ -19,6 +19,7 @@ class ReturnProductSeeder extends Seeder
             'price' => 300000,
             'from' => 1,
             'to' => 3,
+            'state' => 1
         ]);
     }
 }
