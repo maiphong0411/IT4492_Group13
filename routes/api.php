@@ -23,10 +23,10 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {
         });
         Route::group(['prefix' => 'return_products',],
             function () {
-                Route::get('/', 'ReturnProductController@index');
-                Route::post('/store-returnproduct', 'ReturnProductController@store');
-                Route::put('/{id}', 'ReturnProductController@update');
-                Route::delete('/{id}', 'ReturnProductController@destroy');
+                Route::get('/', 'ReturnProduct\IndexController@index');
+                Route::post('/store-returnproduct', 'ReturnProduct\StoreController@store');
+                Route::put('/{id}', 'ReturnProduct\UpdateController@update');
+                Route::delete('/{id}', 'ReturnProduct\DestroyController@destroy');
         });
         Route::group(['prefix' => 'export_products',],
             function () {

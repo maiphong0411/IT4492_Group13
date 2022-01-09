@@ -17,7 +17,10 @@ class ProductController extends ApiController
     }
     public function index()
     {
-        return response()->json(['data'=>['data'=>$this->productService->getAll()]]);
+        return response()->json([
+            'data'=>$this->productService->getAll(),
+            'code' => 200
+        ]);
     }
 
     public function store(Request $request)
@@ -25,8 +28,10 @@ class ProductController extends ApiController
         try {
             $this->productService->store($request);
             return response()->json([
-                'data'=>['code' => 200, 'message' => 'Create Product successful!'],
-            ], 200);
+                'data' =>[
+                    'message' => 'Create Product successful!'
+                ]
+            ]);
         } catch(\Exception $error) {
             return response()->json([
                 'data'=> [
@@ -42,12 +47,16 @@ class ProductController extends ApiController
         try {
             $this->productService->update($request, $id);
             return response()->json([
-                'data'=> ['code' => 200, 'message' => 'Update successfully !']
-            ],200
+                'data'=> [
+                    'code' => 200, 
+                    'message' => 'Update successfully !'
+                ]],200
             );
         }catch (\Exception $error){
             return response()->json([
-                    'data'=>['code' => 500, 'message' => $error->getMessage()]
+                    'data'=>[
+                        'code' => 500, 
+                        'message' => $error->getMessage()]
                 ]
             );
         }

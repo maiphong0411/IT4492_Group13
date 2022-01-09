@@ -18,7 +18,9 @@ class ReturnProductController extends ApiController
 
     public function index()
     {
-        return response()->json(['data'=>['data'=>$this->returnProductService->getAll()]]);
+        return response()->json([
+            'data'=> $this->returnProductService->getAll()
+        ]);
     }
 
     public function store(Request $request)
@@ -26,14 +28,13 @@ class ReturnProductController extends ApiController
         try {
             $this->returnProductService->store($request);
             return response()->json([
-                'data'=>['code' => 200, 'message' => 'Create ReturnProduct successful!'],
-            ], 200);
+                'code' => 200, 
+                'message' => 'Create ReturnProduct successful!',
+            ]);
         } catch(\Exception $error) {
             return response()->json([
-                'data'=> [
-                    'code' => 500,
-                    'message' => $error->getMessage()
-                ]
+                'code' => 500,
+                'message' => $error->getMessage()
             ]);
         }
     }
@@ -43,14 +44,14 @@ class ReturnProductController extends ApiController
         try {
             $this->returnProductService->update($request, $id);
             return response()->json([
-                'data'=> ['code' => 200, 'message' => 'Update successfully !']
-            ],200
-            );
+                'code' => 200, 
+                'message' => 'Update successfully !'
+            ]);
         }catch (\Exception $error){
             return response()->json([
-                    'data'=>['code' => 500, 'message' => $error->getMessage()]
-                ]
-            );
+                'code' => 500, 
+                'message' => $error->getMessage()
+            ]);
         }
     }
 
@@ -59,14 +60,14 @@ class ReturnProductController extends ApiController
         try {
             $this->returnProductService->destroy($id);
             return response()->json([
-                'data'=> ['code' => 200, 'message' => 'Delete successfully !']
-            ],200
-            );
+                'code' => 200, 
+                'message' => 'Delete successfully !'
+            ]);
         }catch (\Exception $error){
             return response()->json([
-                    'data'=>['code' => 500, 'message' => $error->getMessage()]
-                ]
-            );
+                'code' => 500, 
+                'message' => $error->getMessage()
+            ]);
         }
     }
 }
