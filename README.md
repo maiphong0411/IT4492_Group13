@@ -18,3 +18,4 @@ Có 3 phần : controller, service, repository
 - Service: sẽ lưu trong thư mục App\Services\Api dùng để sử lý các logic 
 - Controller: sẽ lưu trong App\Http\Controllers\Api trả dữ liệu về cho người dùng 
 
+# truongtest

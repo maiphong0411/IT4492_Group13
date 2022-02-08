@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () 
+{
+    return view('ListProPage');
+});
+Route::get('/CreateProduct',function()
+{
+    return view('FormPage');
+});
+Route::get('/SaveProduct',function()
+{
+    return view('SavePage');
+});
+Route::get('/ListReturnProduct',function()
+{
+    return view('ListReturnProPgae');
+});
+Route::get('/InfoPro',function()
+{
+    return view('InfoProduct');
 });

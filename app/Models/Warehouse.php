@@ -9,5 +9,5 @@ class Warehouse extends Model
     //
     protected $fillable = [
         'id', 'name','address'
-    ]
+    ];
 }

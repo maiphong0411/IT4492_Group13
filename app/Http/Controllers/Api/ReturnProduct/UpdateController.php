@@ -14,7 +14,6 @@ class UpdateController extends Controller
     {
        $this->returnProductService = $returnProductService;
     }
-    
     /**
      * Update the specified resource in storage.
      *
